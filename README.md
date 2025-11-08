@@ -1,50 +1,103 @@
-# Welcome to your Expo app 👋
+# 📝 MyTaskApp
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Una aplicación simple y elegante creada con **React Native (Expo)** para gestionar tareas, con persistencia local usando **AsyncStorage**.  
+Permite **agregar, marcar como completadas, eliminar y filtrar** tareas según su estado (todas, pendientes o completadas).
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Características principales
+
+- ✅ Agregar nuevas tareas.
+- 🔁 Marcar tareas como completadas o pendientes.
+- 🗑️ Eliminar tareas fácilmente.
+- 🔍 Filtrar tareas por estado:
+  - Todas
+  - Pendientes
+  - Completadas
+- 💾 Persistencia local con **AsyncStorage**.
+- 🎨 Interfaz oscura moderna basada en el tema `#0f172a`.
+
+---
+
+## 🧩 Estructura del proyecto
+
+src/
+├── components/
+│ ├── TaskInput.tsx # Componente para agregar nuevas tareas
+│ ├── TaskList.tsx # Lista de tareas
+│
+├── hooks/
+│ └── useTaskInput.ts # Hook personalizado para la lógica de agregar tarea
+│ └── useTasks.ts # Hook personalizado para la lógica de tareas
+│
+├── constants/
+│ └── index.ts # Constantes en este caso array de filtros
+|
+├── services/
+│ └── storage.ts # Métodos getTasks y saveTasks con AsyncStorage
+│
+├── styles/
+│ ├── task-input.style.ts # Estilos del input
+│ ├── task-item.style.ts # Estilos de task item
+│ └── theme.ts # Tema base (colores, fondos)
+│
+├── types/
+│ └── task.ts # Tipado de Task y filtros
+│
+└── app/
+├── index.tsx # Pantalla principal
+└── \_layout.tsx # Configuración de tabs
+
+## ⚙️ Requisitos previos
+
+Antes de comenzar asegúrate de tener instalado:
+
+- [Node.js 18+](https://nodejs.org/)
+- [Expo CLI](https://docs.expo.dev/get-started/installation/)
+- [Git](https://git-scm.com/)
+
+---
+
+## 🧭 Instalación
+
+1. **Clonar el repositorio**
+
+   ```bash
+   git clone https://github.com/tu-usuario/MyTaskApp.git
+   cd MyTaskApp
+
+   ```
+
+2. Instalar dependencias
 
    ```bash
    npm install
+
    ```
 
-2. Start the app
-
+3. Iniciar el proyecto
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+## 📱 Ejecutar la app
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 📲 En tu teléfono (recomendado)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+1. Instala la app **Expo Go** desde:
 
-## Get a fresh project
+   - [Google Play](https://play.google.com/store/apps/details?id=host.exp.exponent)
+   - [App Store](https://apps.apple.com/app/expo-go/id982107779)
 
-When you're ready, run:
+2. Escanea el **QR Code** que aparece en la terminal o en el navegador cuando ejecutas:
 
-```bash
-npm run reset-project
-```
+   ```bash
+   npx expo start
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 💻 En emulador o simulador
 
-## Learn more
+- **🤖 Android:** abre el emulador y presiona la tecla **`a`** en la terminal.  
+- **🍎 iOS (solo Mac):** presiona la tecla **`i`** en la terminal para abrirlo en el simulador.
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### NOTA ### 
+- ** En caso de querer usar un emulador para iOS o Android debes tener corriendo el emulador o conectar un dispositivo fisico
