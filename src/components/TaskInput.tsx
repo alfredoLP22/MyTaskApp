@@ -17,12 +17,13 @@ export default function TaskInput({ onAddTask }: TaskInputProps) {
         style={TaskInputStyles.input}
       />
       <TouchableOpacity
+        onPress={handleAdd}
+        disabled={isDisabled}
+        activeOpacity={0.8}
         style={[
           TaskInputStyles.button,
           isDisabled && TaskInputStyles.buttonDisabled,
         ]}
-        onPress={handleAdd}
-        disabled={isDisabled}
       >
         <Text style={TaskInputStyles.buttonText}>Add</Text>
       </TouchableOpacity>

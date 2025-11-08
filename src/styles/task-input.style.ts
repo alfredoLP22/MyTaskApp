@@ -18,13 +18,14 @@ export const TaskInputStyles = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 20,
     justifyContent: "center",
+    alignItems: "center",
   },
   buttonText: {
     color: "#fff",
     fontWeight: "600",
   },
   buttonDisabled: {
-    opacity: 0.6,
     backgroundColor: "#475569",
+    opacity: 0.7,
   },
 });

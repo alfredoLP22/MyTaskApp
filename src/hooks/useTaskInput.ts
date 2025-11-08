@@ -6,10 +6,9 @@ export const useTaskInput = (onAddTask: (title: string) => void) => {
   const isDisabled = useMemo(() => text.trim() === "", [text]);
 
   const handleAdd = () => {
-    if (text.trim()) {
-      onAddTask(text.trim());
-      setText("");
-    }
+    if (isDisabled) return;
+    onAddTask(text.trim());
+    setText("");
   };
 
   return { text, setText, handleAdd, isDisabled };
